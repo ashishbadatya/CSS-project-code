@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram 2030 Login</title>
+  <style>
+    :root {
+      --insta-pink: #ff0055;
+      --insta-purple: #c800ff;
+      --insta-orange: #ff6a00;
+      --bg-gradient: linear-gradient(135deg, #140033, #2a0033, #000000);
+      --glass: rgba(255, 255, 255, 0.05);
+      --glow-border: rgba(255, 0, 170, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: var(--bg-gradient);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+    }
+
+    .insta-login {
+      background: var(--glass);
+      border: 1px solid var(--glow-border);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 90%;
+      max-width: 400px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 0 25px rgba(255, 0, 140, 0.4), 0 0 60px rgba(255, 106, 0, 0.2);
+      animation: fadeIn 1s ease forwards;
+      opacity: 0;
+      transform: scale(0.95);
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .insta-login::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 0, 200, 0.06) 0%, transparent 70%);
+      animation: pulse 6s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    .insta-login h2 {
+      text-align: center;
+      color: #ff6a00;
+      margin-bottom: 30px;
+      font-size: 26px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px var(--insta-pink);
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      color: #ccc;
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+      text-shadow: 0 0 4px rgba(255,255,255,0.1);
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: none;
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      box-shadow: inset 0 0 8px rgba(255, 0, 150, 0.2);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .input-group input:focus {
+      box-shadow: 0 0 12px var(--insta-pink), 0 0 20px var(--insta-purple);
+    }
+
+    .insta-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, var(--insta-pink), var(--insta-purple), var(--insta-orange));
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 20px var(--insta-pink), 0 0 30px var(--insta-orange);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .insta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--insta-purple), 0 0 50px var(--insta-orange);
+    }
+
+    @media (max-width: 500px) {
+      .insta-login {
+        padding: 30px 20px;
+      }
+
+      .insta-login h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="insta-login">
+    <h2>Welcome to the Gramverse</h2>
+    <div class="input-group">
+      <label for="insta-username">Username</label>
+      <input type="text" id="insta-username" placeholder="@username">
+    </div>
+    <div class="input-group">
+      <label for="insta-password">Password</label>
+      <input type="password" id="insta-password" placeholder="••••••••••••">
+    </div>
+    <button class="insta-btn" onclick="instaLogin()">Log In</button>
+  </div>
+
+  <script>
+    function instaLogin() {
+      const username = document.getElementById('insta-username').value.trim();
+      const password = document.getElementById('insta-password').value;
+      if (!username || !password) {
+        alert("Please complete the fields.");
+        return;
+      }
+      alert(`Welcome, ${username}!`);
+    }
+  </script>
+
+</body>
+</html>

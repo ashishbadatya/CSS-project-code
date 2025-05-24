@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 2px solid black;
+            height: 200px;
+            width: 80vh;
+            display: flex;
+            flex-wrap: wrap;
+            /* wrap or no wrap   */
+            flex-flow: row wrap;
+            /*  flex-direction || wrap kaha karna he ye set karta he */
+
+            justify-content: center;
+            /*content ko center me layega // start,center,end */
+            align-items: center;
+            /*imp- item ko center pe layega // start , center , end */
+
+            gap: 6px;
+            /*row gap or colum gap  || or ak satha bhi lekh sakh te ho */
+            row-gap: 40px;
+            /* row re gap hoga */
+            column-gap: 10px;
+            /* align-content: center; align-content ko remove kar ne se align self calega nahi to nahi chalega 😁*/
+            /*/ imp- line center /*/
+            /* flex-grow: 1; by default flex grow 0 hota he */
+            flex-shrink: 1;
+        }
+
+        .card {
+            background-color: rebeccapurple;
+            width: 35px;
+            height: 35px;
+            border: 2px solid black;
+            color: aliceblue;
+            
+        
+        }
+        .order-1 {  /*order set kar sakh te ho order 1 to last me ayega // order left to right calta he */
+            order:1;
+        }
+        .order-2 {
+            order: 2;
+        }
+        .order-3 {
+            order: 3;
+        }
+        .card2 {
+            /* flex-grow: 4; flex grow 4 box neraha he */
+            flex-shrink: 2; /* flex shrink kya karta he ki ? jis he felx shrink 1 he wo double speed se shrink ho ga */
+            align-self: self-end;
+        }
+
+          .tt4 {
+            align-self : self-start; /* align-contect run he to off karne ke badh align self run hoga */
+            }
+          
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="card">1</div>
+        <div class="card order-1">2</div>
+        <div class="card card2">3</div>
+        <div class="card">4</div>
+        <div class="card tt4">5</div>
+        <div class="card">6</div>
+        <div class="card"></div>
+        
+        <div class="card"></div>
+        <div class="card order-1">66</div>
+        <div class="card"></div>
+        <div class="card"></div>
+
+    </div>
+</body>
+
+</html>

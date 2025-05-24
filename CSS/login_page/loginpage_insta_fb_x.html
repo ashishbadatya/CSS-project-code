@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>2030 Login Multi-UI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --glass: rgba(255, 255, 255, 0.05);
+      --common-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .login-box {
+      background: var(--glass);
+      border: 1px solid var(--common-border);
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 350px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+      animation: fadeIn 1.2s ease forwards;
+      opacity: 0;
+      transform: scale(0.95);
+      position: relative;
+    }
+
+    .login-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+      animation: pulse 6s infinite ease-in-out;
+      z-index: 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .login-box h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 22px;
+      text-shadow: 0 0 8px #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .input-group label {
+      color: #ccc;
+      font-size: 13px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Instagram */
+    .insta {
+      box-shadow: 0 0 20px #ff0080;
+    }
+    .insta h2 { color: #ff6a00; }
+    .insta .login-btn {
+      background: linear-gradient(90deg, #ff0055, #c800ff, #ff6a00);
+      box-shadow: 0 0 20px #ff00aa;
+    }
+    .insta .login-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #ff009d, 0 0 60px #ff6a00;
+    }
+
+    /* Facebook */
+    .facebook {
+      box-shadow: 0 0 20px #1877f2;
+    }
+    .facebook h2 { color: #1877f2; }
+    .facebook .login-btn {
+      background: linear-gradient(90deg, #1877f2, #3b5998);
+      box-shadow: 0 0 20px #1877f2;
+    }
+    .facebook .login-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #1e90ff;
+    }
+
+    /* X */
+    .x {
+      box-shadow: 0 0 20px #00ffee;
+    }
+    .x h2 { color: #00ffee; }
+    .x .login-btn {
+      background: linear-gradient(90deg, #00ffee, #000);
+      box-shadow: 0 0 20px #00ffee;
+    }
+    .x .login-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00ffee, 0 0 40px #000;
+    }
+
+    @media (max-width: 1100px) {
+      body {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Instagram Box -->
+  <div class="login-box insta">
+    <h2>Instagram Login</h2>
+    <div class="input-group">
+      <label for="insta-username">Username</label>
+      <input type="text" id="insta-username" placeholder="@username">
+    </div>
+    <div class="input-group">
+      <label for="insta-password">Password</label>
+      <input type="password" id="insta-password" placeholder="••••••••">
+    </div>
+    <button class="login-btn" onclick="handleLogin('insta')">Log In</button>
+  </div>
+
+  <!-- Facebook Box -->
+  <div class="login-box facebook">
+    <h2>Facebook Login</h2>
+    <div class="input-group">
+      <label for="fb-email">Email</label>
+      <input type="email" id="fb-email" placeholder="email@example.com">
+    </div>
+    <div class="input-group">
+      <label for="fb-password">Password</label>
+      <input type="password" id="fb-password" placeholder="••••••••">
+    </div>
+    <button class="login-btn" onclick="handleLogin('facebook')">Log In</button>
+  </div>
+
+  <!-- X Box -->
+  <div class="login-box x">
+    <h2>X (Twitter) Login</h2>
+    <div class="input-group">
+      <label for="x-username">Handle</label>
+      <input type="text" id="x-username" placeholder="@handle">
+    </div>
+    <div class="input-group">
+      <label for="x-password">Password</label>
+      <input type="password" id="x-password" placeholder="••••••••">
+    </div>
+    <button class="login-btn" onclick="handleLogin('x')">Log In</button>
+  </div>
+
+  <script>
+    function handleLogin(platform) {
+      let username = '';
+      let password = '';
+
+      if (platform === 'insta') {
+        username = document.getElementById('insta-username').value.trim();
+        password = document.getElementById('insta-password').value;
+      } else if (platform === 'facebook') {
+        username = document.getElementById('fb-email').value.trim();
+        password = document.getElementById('fb-password').value;
+      } else if (platform === 'x') {
+        username = document.getElementById('x-username').value.trim();
+        password = document.getElementById('x-password').value;
+      }
+
+      if (!username || !password) {
+        alert(`Please fill in all fields for ${platform.toUpperCase()}`);
+        return;
+      }
+
+      alert(`${platform.toUpperCase()} login successful! Welcome, ${username}`);
+    }
+  </script>
+
+</body>
+</html>
