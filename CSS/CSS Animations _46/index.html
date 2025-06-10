@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+             width: 80vw;
+            height: 30vh;
+            background-color: aqua;
+           
+        }
+        .box {
+             width: 100px;
+            height: 150px;
+            background-color: blueviolet;
+            /* animation :name duration timing-function delay iteration-count direction fill-mode; */
+            animation-name: narayan; /*name banana padega then Animation run ho ga */
+            animation-duration: 2s;
+            animation-iteration-count:3 ;/* kine bar goha */
+            animation-timing-function: cubic-bezier(0, 0.39, 0, 1.01);
+            animation-delay: 2s;
+            animation-duration: alternate-reverse;
+            animation-play-state: paused; /* jaha par paused karunga wohi par paused hoga */
+
+            /*animation short hand */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+             animation : narayan 2s ease-in-out infinite reverse backwards , /* agar multiple animation use kar na he to 
+                                                                               (,) use kar na */
+                        ashish 2s ease-in-out 3s 1;
+        }
+        /* CSS me Animation use karne ke liye (@keyframs use hota he) @keyframs name */
+        @keyframes narayan{
+            from {
+                transform: translateX(300px);
+            }
+             to {
+                  transform:translateY(500px);
+                  background-color: rgb(152, 234, 1);
+             }
+            }
+             @keyframes ashish {
+                0% {
+                    transform: rotate(100deg);
+                }
+                20% {
+                    transform: rotate(100deg);
+                }
+                30% {
+                    transform: rotate(100deg);
+                }
+                40% {
+                    transform: rotate(100deg);
+                }
+                70% {
+                    transform: rotate(100deg);
+                }
+             }
+                
+           
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            Box
+        </div>
+    </div>
+</body>
+</html>

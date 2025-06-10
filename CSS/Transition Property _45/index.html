@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        .container {
+            background-color: red;
+            width: 50vw;
+            height: 40vh;
+        }
+        .box {
+            background-color: aqua;
+            width: 30vw;
+            height: 20vw;
+             /* 4 proporty */
+            transition-property:all; /*single ,multiple and all and transfrom property bhi use karsakthe go*/
+            transition-duration: 3s;
+            transition-timing-function: cubic-bezier(0.66,-0.88, 0.11, 0.97);
+            transition-delay:2s;
+            /* transition : all 3s cubic-bezier(0.09,0.5,0,0.99) 1s; */
+             
+        }
+        .box.tra{
+           
+           transform: translateX(10%) translateY(10%);
+           background-color: black; /*color proporty bhi change hojaye ga */
+           
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box tra"></div>
+    </div>
+</body>
+</html>

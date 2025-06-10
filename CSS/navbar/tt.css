@@ -1,0 +1,38 @@
+*  {
+    padding : 0px ;
+margin :0px ;
+}
+#one {
+    background-color: aliceblue;
+}
+#navbar{
+    background-color : red ;
+    text-align :center;
+    text-decoration: line-through;
+    display :inline;
+}
+#div {
+    background-color :red ;
+    
+}
+ 
+/* 
+
+  div  { 
+   
+    background-color :red;
+    font-size  : 20px;
+    line-height: 29px;
+    text-align : center ;
+  
+
+  }
+#one{ 
+    font-size : 2   em;
+    position :static;
+
+}
+#two {
+    border :2px solid black ;
+    
+} */
